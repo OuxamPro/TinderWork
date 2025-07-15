@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/TinderWork/static/css/main.3a978c88.css",
+    "main.js": "/TinderWork/static/js/main.d70f2245.js",
+    "index.html": "/TinderWork/index.html",
+    "main.3a978c88.css.map": "/TinderWork/static/css/main.3a978c88.css.map",
+    "main.d70f2245.js.map": "/TinderWork/static/js/main.d70f2245.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3a978c88.css",
+    "static/js/main.d70f2245.js"
+  ]
+}

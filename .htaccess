@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Si le fichier ou le répertoire n'existe pas
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Ne pas rediriger les requêtes vers le dossier backend
+RewriteCond %{REQUEST_URI} !^/backend/
+
+# Rediriger toutes les autres requêtes vers index.html
+RewriteRule ^ index.html [QSA,L] 
