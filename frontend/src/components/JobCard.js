@@ -4,6 +4,10 @@ import { useAuth } from '../context/AuthContext';
 const JobCard = ({ item, userRole }) => {
     const { user } = useAuth();
 
+    console.log('JobCard - item:', item);
+    console.log('JobCard - userRole:', userRole);
+    console.log('JobCard - item type:', typeof item);
+
     const getInitials = (firstName, lastName) => {
         return `${firstName?.charAt(0) || 'U'}${lastName?.charAt(0) || ''}`.toUpperCase();
     };
@@ -157,7 +161,7 @@ const JobCard = ({ item, userRole }) => {
                     <div className="candidate-photo-container">
                         {item.profilePicture ? (
                             <img 
-                                                                    src={`http://localhost/TinderWork/backend/${item.profilePicture}`}
+                                src={`http://localhost/TinderWork/backend/${item.profilePicture}`}
                                 alt="Photo de profil"
                                 className="candidate-photo"
                             />
@@ -255,10 +259,20 @@ const JobCard = ({ item, userRole }) => {
                     <div className="contact-info">
                         <div className="d-flex align-items-center p-3 rounded-3" style={{ background: 'var(--gray-100)' }}>
                             <div className="avatar-modern me-3" style={{ width: '40px', height: '40px', fontSize: '1rem' }}>
-                                <i className="fas fa-user"></i>
+                                {item.profilePicture ? (
+                                    <img 
+                                        src={`http://localhost/TinderWork/backend/${item.profilePicture}`}
+                                        alt="Photo de profil"
+                                        className="w-100 h-100 rounded-circle object-fit-cover"
+                                    />
+                                ) : (
+                                    getInitials(item.firstName, item.lastName)
+                                )}
                             </div>
                             <div>
-                                <h6 className="mb-1 fw-bold">Candidat</h6>
+                                <h6 className="mb-1 fw-bold">
+                                    {item.firstName} {item.lastName}
+                                </h6>
                                 <p className="text-muted mb-0 small">
                                     <i className="fas fa-envelope me-1"></i>
                                     {item.email}

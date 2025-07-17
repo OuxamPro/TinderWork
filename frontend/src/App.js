@@ -14,6 +14,7 @@ import JobPostForm from './components/JobPostForm';
 import MyJobs from './pages/MyJobs';
 import PrivateRoute from './components/PrivateRoute';
 import FAQ from './pages/FAQ';
+import HomePage from './pages/HomePage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/CustomStyles.css';
 
@@ -24,10 +25,10 @@ function App() {
                 <div className="min-h-screen bg-gray-100">
                     <Navbar />
                     <Routes>
+                        <Route path="/" element={<HomePage />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
                         <Route path="/faq" element={<FAQ />} />
-                        <Route path="/" element={<Navigate to="/dashboard" replace />} />
                         <Route
                             path="/dashboard"
                             element={

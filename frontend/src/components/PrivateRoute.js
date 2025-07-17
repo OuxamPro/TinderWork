@@ -13,15 +13,21 @@ const PrivateRoute = ({ children }) => {
     if (loading) {
         console.log('PrivateRoute: Chargement en cours...');
         return (
-            <div className="min-h-screen flex items-center justify-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+            <div className="main-container">
+                <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '60vh' }}>
+                    <div className="text-center">
+                        <div className="modern-spinner mx-auto mb-4"></div>
+                        <h3 className="gradient-text mb-2">Vérification de votre session</h3>
+                        <p className="text-muted">Nous sécurisons votre connexion...</p>
+                    </div>
+                </div>
             </div>
         );
     }
 
     if (!user) {
         console.log('PrivateRoute: Utilisateur non connecté, redirection vers /login');
-        return <Navigate to="/login" />;
+        return <Navigate to="/login" replace />;
     }
 
     console.log('PrivateRoute: Utilisateur connecté, affichage du composant');

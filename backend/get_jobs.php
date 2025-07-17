@@ -37,7 +37,8 @@ if (!$user || $user['role'] !== 'candidate') {
 
 try {
     // Récupérer les annonces avec les infos des recruteurs
-    $query = "SELECT j.*, u.company as company_name, u.profilePicture as recruiter_photo
+    $query = "SELECT j.*, u.company as company_name, u.profilePicture as recruiter_photo, 
+                     u.firstName as recruiter_firstName, u.lastName as recruiter_lastName
              FROM jobs j 
              JOIN users u ON j.recruiterId = u.id 
              WHERE j.id NOT IN (

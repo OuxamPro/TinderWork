@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/TinderWork/static/css/main.3a978c88.css",
-    "main.js": "/TinderWork/static/js/main.d70f2245.js",
+    "main.css": "/TinderWork/static/css/main.5bb7df49.css",
+    "main.js": "/TinderWork/static/js/main.e7103a2e.js",
     "index.html": "/TinderWork/index.html",
-    "main.3a978c88.css.map": "/TinderWork/static/css/main.3a978c88.css.map",
-    "main.d70f2245.js.map": "/TinderWork/static/js/main.d70f2245.js.map"
+    "main.5bb7df49.css.map": "/TinderWork/static/css/main.5bb7df49.css.map",
+    "main.e7103a2e.js.map": "/TinderWork/static/js/main.e7103a2e.js.map"
   },
   "entrypoints": [
-    "static/css/main.3a978c88.css",
-    "static/js/main.d70f2245.js"
+    "static/css/main.5bb7df49.css",
+    "static/js/main.e7103a2e.js"
   ]
 }

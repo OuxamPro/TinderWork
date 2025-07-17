@@ -50,21 +50,28 @@ const Swipe = () => {
         try {
             setLoading(true);
             setError(null);
+            console.log('Fetching candidates...');
             const response = await axios.get('http://localhost/TinderWork/backend/get_candidates.php', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 },
                 withCredentials: true
             });
+            console.log('Candidates response:', response.data);
+            console.log('Candidates length:', response.data.length);
+            
             if (response.data.length === 0) {
+                console.log('No candidates found');
                 setNoMoreItems(true);
                 setCurrentItem(null);
             } else {
+                console.log('Setting candidates:', response.data);
                 setItems(response.data);
                 setCurrentItem(response.data[0]);
                 setNoMoreItems(false);
             }
         } catch (err) {
+            console.error('Error fetching candidates:', err);
             setError(err.response?.data?.error || 'Une erreur est survenue lors de la récupération des candidats');
         } finally {
             setLoading(false);
